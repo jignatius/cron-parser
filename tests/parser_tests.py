@@ -47,11 +47,11 @@ class TestSum(TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             parser.output()
             self.assertEqual(fake_out.getvalue(),
-                             "day           0 15 30 45\n"
+                             "minute        0 15 30 45\n"
                              "hour          0\n"
                              "day of month  1 15\n"
-                             "day           1 2 3 4 5 6 7 8 9 10 11 12\n"
-                             "day           1 2 3 4 5\n"
+                             "month         1 2 3 4 5 6 7 8 9 10 11 12\n"
+                             "day of week   1 2 3 4 5\n"
                              "command       /usr/bin/find\n")
 
 
