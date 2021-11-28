@@ -45,7 +45,7 @@ from cron_parser.cron_parser import CronParser
 parser = CronParser()
 ```
 CronParser has a parse() method that takes a cron expression and returns True or False to indicate success or failure.
-If the parse function fails, the error can be interrogated in the error member of CronParse.
+If the parse function fails, the error can be interrogated in the error member of CronParser.
 ```python
 if parser.parse(cron_expression):
     parser.output()
