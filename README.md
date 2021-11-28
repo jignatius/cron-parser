@@ -32,8 +32,8 @@ day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
 ## Unit tests
-There are a number of unit tests for the cron parser. To run them, you would have to install the Python virtual
-environment. To create the virtual environment run this command within the cron-parser directory:
+There are a number of unit tests for the cron parser. To run them, you would have to create a Python virtual
+environment first. To do that, run this command within the cron-parser directory:
 ```bash
 python3 -m venv venv
 ```
