@@ -41,7 +41,7 @@ Activate your virtual environment using
 ```bash
 source venv/bin/activate
 ```
-Then run the unit tests can be using:
+Then the unit tests can be run using:
 ```bash
 python -m unittest tests/parser_tests.py
 ```
