@@ -31,6 +31,23 @@ month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
+### Classes
+The main high level class is CronParser. To create an instance of CronParser:
+```python
+from cron_parser.cron_parser import CronParser
+
+parser = CronParser()
+```
+CronParser has a parse() method that takes a cron expression and returns True or False to indicate success or failure.
+If the parse function fails, the error can be interrogated in the error member of CronParse.
+```python
+if parser.parse(cron_expression):
+    parser.output()
+else:
+    print(parser.error)
+```
+CronParser has a member variable for each cron field, and each of these fields are instances of the following classes:
+Minute, Month, DayOfMonth, Month and DayOfWeek, all of which are derived from the base class Field.
 ## Unit tests
 There are a number of unit tests for the cron parser. To run them, you would have to create a Python virtual
 environment first. To do that, run this command within the cron-parser directory:
