@@ -26,7 +26,7 @@ chmod +x cron-parser.py
 ```
 Then simply invoke it by calling the script with a cron string like this:
 ```bash
-~$ ./cron-parser.py ＂*/15 0 1,15 * 1-5 /usr/bin/find＂
+~$ ./cron-parser.py "*/15 0 1,15 * 1-5 /usr/bin/find"
 ```
 and it should print the following output:
 ```bash
@@ -36,6 +36,11 @@ day of month  1 15
 month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
+```
+If for some reason you have problems executing the script from the command line, then you can create a Python virtual
+environment (see below under Unit Tests for how to create a new virtual environment) and run the script like this:
+```bash
+~$ python cron-parser.py "*/15 0 1,15 * 1-5 /usr/bin/find"
 ```
 ### Classes
 The main high level class is CronParser. To create an instance of CronParser:
