@@ -59,7 +59,7 @@ else:
 ```
 CronParser has a member variable for each cron field, and each of these fields are instances of the following classes:
 Minute, Month, DayOfMonth, Month and DayOfWeek, all of which are derived from the base class Field.
-## Unit tests
+## Unit Tests
 There are a number of unit tests for the cron parser. To run them, you would have to create a Python virtual
 environment first. To do that, run this command within the cron-parser directory:
 ```bash
