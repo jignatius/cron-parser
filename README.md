@@ -6,7 +6,7 @@ The parser only considers the standard cron format with five time fields (minute
 week) plus a command. It does not handle the special time strings such as "@yearly". The input will be on a single line.
 
 ## Installation
-In case you don't have Python3 and git installed on your Linux system, you can install the using:
+In case you don't have Python3 and git installed on your Linux system, you can install them using:
 ```bash
 sudo apt-get update
 sudo apt-get install python3
