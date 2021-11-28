@@ -6,8 +6,8 @@ The parser only considers the standard cron format with five time fields (minute
 week) plus a command. It does not handle the special time strings such as "@yearly". The input will be on a single line.
 
 ## Installation
-The parser is written in such a way that it can be invoked by simply running it from the command line without to install
-other modules. You need to get the source files first:
+The parser is written in such a way that it can be invoked by simply running it from the command line without having to 
+install other modules. You need to get the source files first:
 ```bash
 git clone https://github.com/jignatius/cron-parser.git
 ```
