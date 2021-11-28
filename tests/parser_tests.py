@@ -36,6 +36,31 @@ class TestSum(TestCase):
         parser.parse("*/15 0 1,15 JAN 1-7 /usr/bin/find")
         self.assertNotEqual(parser.error, None)
 
+    def test_single_value(self):
+        parser = CronParser()
+        parser.parse("*/15 0 1,15 JAN 1-6 /usr/bin/find")
+        self.assertEqual(parser.hour.values, [0])
+
+    def test_interval(self):
+        parser = CronParser()
+        parser.parse("*/15 0 1,15 JAN 1-6 /usr/bin/find")
+        self.assertListEqual(parser.minute.values, [0, 15, 30, 45])
+
+    def test_range(self):
+        parser = CronParser()
+        parser.parse("*/15 0 1,15 JAN 1-6 /usr/bin/find")
+        self.assertListEqual(parser.day_of_week.values, [1, 2, 3, 4, 5, 6])
+
+    def test_all_values(self):
+        parser = CronParser()
+        parser.parse("*/15 0 1,15 * 1-6 /usr/bin/find")
+        self.assertListEqual(parser.month.values, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+    def test_list(self):
+        parser = CronParser()
+        parser.parse("*/15 0 1,15 JAN 1-6 /usr/bin/find")
+        self.assertListEqual(parser.day_of_month.values, [1, 15])
+
     def test_non_numeric(self):
         parser = CronParser()
         parser.parse("*/15 0 1,15 JAN 1-f /usr/bin/find")
